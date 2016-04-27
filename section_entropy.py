@@ -6,7 +6,7 @@ filename = sys.argv[1]
 pe = pefile.PE(filename)
 
 if len(sys.argv) != 2:
-    print "Usage: file_entropy.py [path]filename"
+    print "Usage: section_entropy.py [path]filename"
     sys.exit()
 
 # read the whole file into a byte array
@@ -17,7 +17,7 @@ for section in pe.sections:
     if sectionSize >= 512000:
         print "Maximum section size exceeded.  Entropy is not a reliable indicator on files or sections above 500kb."
         sys.exit()
-    # calculate the frequency of each byte value in the file
+# calculate the frequency of each byte value in the file
     freqList = []
     if sectionSize > 0:
         for b in range(256):
@@ -29,7 +29,7 @@ for section in pe.sections:
     else:
         print "Section " + section.Name + " is empty."
         #print freqList #used only for testing and debugging of freqList
-        # Shannon entropy
+# Shannon entropy
     ent = 0.0
     for freq in freqList:
         if freq > 0:

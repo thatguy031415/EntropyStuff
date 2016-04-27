@@ -3,7 +3,7 @@ import math
 
 
 if len(sys.argv) != 2:
-    print "Usage: file_entropy.py [path]filename"
+    print "Usage: entropy.py [path]filename"
     sys.exit()
 
 # read the whole file into a byte array
