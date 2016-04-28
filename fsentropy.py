@@ -83,8 +83,9 @@ def file_entropy():
 
 try:
     pe = pefile.PE(filename)
-    section_entropy()
     file_entropy()
+    section_entropy()
+
 except:
     print filename + " is not a PE File.  Returning file entropy only..."
     file_entropy()
