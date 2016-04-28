@@ -35,7 +35,7 @@ def section_entropy():
             if freq > 0:
                 ent = ent + freq * math.log(freq, 2)
         ent = abs(ent)
-        print 'Shannon entropy (min bits per byte-character):'
+        print 'Shannon entropy:'
         print ent
         if ent >= 6.5:
             print "Section " + section.Name + " is likely packed or crypted."
@@ -73,7 +73,7 @@ def file_entropy():
         if freq > 0:
             ent = ent + freq * math.log(freq, 2)
     ent = -ent
-    print 'Shannon entropy (min bits per byte-character):'
+    print 'Shannon entropy:'
     print ent
     if ent >= 6.5:
         print "File is likely packed or crypted."
