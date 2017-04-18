@@ -1,3 +1,5 @@
+'''Code written by Brian Bell and released under the Attribution-ShareAlike 4.0 International license'''
+
 import sys
 import math
 import pefile
