@@ -18,7 +18,6 @@ def section_entropy():
         '''Don't run for files with sections over 500k; Above this size, entropy becomes less reliable as an indicator.'''
         if sectionSize >= 512000:
             print "Maximum section size exceeded.  Entropy is not a reliable indicator on files or sections above 500kb."
-            sys.exit()
             # calculate the frequency of each byte value in the file
         freqList = []
         if sectionSize > 0:
@@ -57,8 +56,6 @@ def file_entropy():
     '''Don't run for files over 500k; Above this size, entropy becomes less reliable as an indicator.'''
     if fileSize >= 512000:
         print "Maximum filesize exceeded.  Entropy is not a reliable indicator on files above 500kb."
-        sys.exit()
-
     # calculate the frequency of each byte value in the file
     freqList = []
     for b in range(256):
